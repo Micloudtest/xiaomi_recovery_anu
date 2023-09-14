@@ -20,10 +20,3 @@ PRODUCT_NAME := twrp_ruby
 PRODUCT_BRAND := Redmi
 PRODUCT_MODEL := ruby
 PRODUCT_MANUFACTURER := xiaomi
-
-PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
-
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="vnd_ruby-user 12 SP1A.210812.016/V14.0.2.0.TKTRUXM release-keys"
-
-BUILD_FINGERPRINT := Redmi/vnd_ruby/ruby:12/SP1A.210812.016/V14.0.2.0.TKTRUXM:user/release-keys
