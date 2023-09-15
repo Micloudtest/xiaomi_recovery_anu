@@ -129,24 +129,12 @@ RECOVERY_SDCARD_ON_DATA := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_EXCLUDE_TWRPAPP := true
 
-# Haptic
-TW_SUPPORT_INPUT_AIDL_HAPTICS :=true
-TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
-
 # Treble
 BOARD_VNDK_VERSION := current
 
 
-# StatusBar
-TW_STATUS_ICONS_ALIGN := center
-TW_CUSTOM_CPU_POS := "300"
-TW_CUSTOM_CLOCK_POS := "70"
-TW_CUSTOM_BATTERY_POS := "790"
-
-
 # TWRP specific build flags
 #TW_DEVICE_VERSION := beta
-TW_LOAD_VENDOR_MODULES := "haptic.ko"
 TW_FRAMERATE := 120
 TW_THEME := portrait_hdpi
 TW_INCLUDE_LOGICAL := my_product my_engineering my_preload
@@ -161,14 +149,13 @@ TW_EXTRA_LANGUAGES := true
 TW_INCLUDE_NTFS_3G := true
 TW_USE_TOOLBOX := true
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone5/temp"
 TW_MAX_BRIGHTNESS := 2047
 TW_DEFAULT_BRIGHTNESS := 1200
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TW_NO_SCREEN_BLANK := true
 TW_EXCLUDE_APEX := false
-
+TW_NO_HAPTICS := true
 
 # This device does not support fastboot boot, do *NOT* remove!
 TW_NO_FASTBOOT_BOOT := true
