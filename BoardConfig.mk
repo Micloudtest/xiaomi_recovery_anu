@@ -55,6 +55,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # fstab
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+TARGET_RECOVERY_WIPE := $(DEVICE_PATH)/recovery.wipe
 
 # Kernel - prebuilt
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 
