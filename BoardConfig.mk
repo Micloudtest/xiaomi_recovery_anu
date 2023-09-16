@@ -60,6 +60,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
 # fstab
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/etc/fstab.mt6877
 
 # Display
 TARGET_SCREEN_DENSITY := 440
