@@ -55,9 +55,6 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 # fstab
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
-# Display
-TARGET_SCREEN_DENSITY := 440
-
 # Kernel
 BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x40078000
