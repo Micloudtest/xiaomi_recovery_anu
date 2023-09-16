@@ -50,8 +50,10 @@
 /otp			emmc		/dev/block/by-name/otp		flags=display="Otp"
 
 
-# External Storage
+# Internal storage 
+/storage		f2fs		/data/media/0			flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
+
+## External Storage
 /usb-otg          	auto		/dev/block/sdd1                 flags=display="usb-otg";storage;wipeingui;removable;fsflags="utf8"
 
-## Internal storage 
-/storage		f2fs		/data/media/0			flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
+
