@@ -18,5 +18,6 @@ $(call inherit-product, device/xiaomi/ruby/device.mk)
 PRODUCT_DEVICE := ruby
 PRODUCT_NAME := twrp_ruby
 PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := ruby
+PRODUCT_MODEL := 22101316G
 PRODUCT_MANUFACTURER := xiaomi
+PRODUCT_RELEASE_NAME := Redmi Note 12 Pro 5G
