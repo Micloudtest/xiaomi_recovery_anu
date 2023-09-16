@@ -30,6 +30,10 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
+PRODUCT_PACKAGES += \
+otapreopt_script
+
+
 # Boot control HAL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
