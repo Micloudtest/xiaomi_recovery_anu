@@ -9,9 +9,6 @@
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
-# Dynam
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
 # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
@@ -35,9 +32,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    libgptutils \
-    libz \
-    libcutils \
     android.hidl.base@1.0 \
     android.hardware.boot@1.2-impl \
     android.hardware.boot@1.2-impl.recovery \
