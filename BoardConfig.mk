@@ -15,8 +15,13 @@ ALLOW_MISSING_DEPENDENCIES := true
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     system \
+    system \
+    vendor \
     vendor \
     product \
+    product \
+    system_ext \
+    system_ext \
     boot \
     vbmeta_vendor \
     vbmeta_system
@@ -95,7 +100,7 @@ BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_PRODUCT := product
 BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_GROUPS := xiaomi_dynamic_partitions
-BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST := system vendor product
+BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST := system system vendor vendor product product mi_ext mi_ext system_ext system_ext
 BOARD_XIAOMI_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
 
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
@@ -129,6 +134,7 @@ TW_THEME := portrait_hdpi
 TW_DEVICE_VERSION := Beta_Norikhsan90
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_FASTBOOTD := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_INCLUDE_REPACKTOOLS := true
 TW_USE_TOOLBOX := true
 TW_EXTRA_LANGUAGES := true
