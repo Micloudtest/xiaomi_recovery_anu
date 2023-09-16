@@ -1,4 +1,4 @@
-# Android device tree for Redmi ruby (ruby)
+# Android device tree for Redmi (anu)
 
 ```
 #
