@@ -121,7 +121,6 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 
 # Treble
 BOARD_VNDK_VERSION := current
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
