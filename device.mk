@@ -5,9 +5,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-# Configure gsi_keys.mk
-$(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
