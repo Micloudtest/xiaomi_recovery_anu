@@ -24,7 +24,7 @@
   
   # A/B partitions 
   export FOX_VIRTUAL_AB_DEVICE=1 
-  export OF_AB_DEVICE_WITH_RECOVERY_PARTITION=1 
+  export OF_AB_DEVICE_WITH_RECOVERY_PARTITION=0
   
   # Flashlight path & Green LED 
   export OF_FL_PATH1=/system/etc/flashlight 
