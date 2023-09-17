@@ -14,7 +14,5 @@ ro.vendor.mtk_tee_gp_support=1
 # USB
 ro.sys.usb.storage.type=mtp
 
-# OTA / DM-Verity / Encryption
+# OTA
 export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
-export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
-export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
