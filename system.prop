@@ -10,9 +10,6 @@ ro.hardware.kmsetkey=beanpod
 # USB
 ro.sys.usb.storage.type=mtp 
 
-
-# Treble
-BOARD_VNDK_VERSION := current
    
 # TWRP Configuration
 TW_FRAMERATE := 60
