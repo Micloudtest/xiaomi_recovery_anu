@@ -11,11 +11,16 @@ ENABLE_VIRTUAL_AB := true
  # A/B 
  AB_OTA_UPDATER := true 
  AB_OTA_PARTITIONS += \ 
-     system \
-     product \
-     vendor \
-     vbmeta_system \ 
-     vbmeta_vendor
+    boot \
+    dtbo \
+    system \
+    system_ext \
+    product \
+    vendor \
+    odm \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor
   
  AB_OTA_POSTINSTALL_CONFIG += \ 
      RUN_POSTINSTALL_system=true \ 
@@ -26,11 +31,13 @@ ENABLE_VIRTUAL_AB := true
   PRODUCT_PACKAGES += \ 
      otapreopt_script \ 
      cppreopts.sh \
-     mtk-plpath-utils
 
  # Boot control HAL 
  PRODUCT_PACKAGES += \ 
-     android.hardware.boot@1.2-mtkimpl.recovery 
+    android.hidl.base@1.0 \
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-impl.recovery \
+    android.hardware.boot@1.2-service
   
  # Fastbootd 
  PRODUCT_PACKAGES += \ 
