@@ -15,8 +15,11 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit from ruby device
 $(call inherit-product, device/xiaomi/ruby/device.mk)
 
-PRODUCT_DEVICE := ruby
-PRODUCT_NAME := twrp_ruby
-PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := ruby
-PRODUCT_MANUFACTURER := xiaomi
+## Device identifier 
+ PRODUCT_DEVICE := ruby
+ PRODUCT_NAME := twrp_ruby
+ PRODUCT_BRAND := Xiaomi
+ PRODUCT_MODEL := Redmi Note 12 PRO 5G
+ PRODUCT_MANUFACTURER := Xiaomi 
+  
+ PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
