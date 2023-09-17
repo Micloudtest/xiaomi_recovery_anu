@@ -13,9 +13,6 @@ ro.sys.usb.storage.type=mtp
 # Platform 
 ro.display.series=Redmi Note 12 pro 5G
 ro.board.platform=ruby
-  
-# FUSE passthrough 
-persist.sys.fuse.passthrough.enable=true 
 
 # Virtual A/B 
 ro.virtual_ab.enabled=true 
