@@ -112,14 +112,6 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 TW_HAS_NO_RECOVERY_PARTITION := true
-TW_EXCLUDE_DEFAULT_USB_INIT := true
-BOARD_RAMDISK_USE_LZ4 := true
-
-
-# Device config 
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_MAX_BRIGHTNESS := 2000
-TW_DEFAULT_BRIGHTNESS := 1000 
 TW_EXCLUDE_DEFAULT_USB_INIT := true   
   
 # Hack: prevent anti rollback
