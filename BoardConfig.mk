@@ -47,9 +47,6 @@ TARGET_NO_BOOTLOADER := true
 # Platform
 TARGET_BOARD_PLATFORM := mt6877
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := ruby,rubypro
-
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
