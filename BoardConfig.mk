@@ -119,8 +119,7 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 
 # Treble
 BOARD_VNDK_VERSION := current
- 
-  
+   
  # TWRP Configuration
  TW_FRAMERATE := 60
  TW_THEME := portrait_hdpi 
@@ -140,11 +139,11 @@ BOARD_VNDK_VERSION := current
   
  # Device config 
  TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness" 
+ TW_MAX_BRIGHTNESS := 2000
  TW_DEFAULT_BRIGHTNESS := 1000 
  TW_EXCLUDE_DEFAULT_USB_INIT := true 
  RECOVERY_SDCARD_ON_DATA := true 
- TW_HAS_NO_RECOVERY_PARTITION := true 
- TW_BACKUP_EXCLUSIONS := /data/fonts 
+ TW_HAS_NO_RECOVERY_PARTITION := true  
   
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
