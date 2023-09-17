@@ -115,25 +115,7 @@ TW_HAS_NO_RECOVERY_PARTITION := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 BOARD_RAMDISK_USE_LZ4 := true
 
-# Treble
-BOARD_VNDK_VERSION := current
-   
-# TWRP Configuration
-TW_FRAMERATE := 60
-TW_THEME := portrait_hdpi 
-#TW_DEVICE_VERSION := Ruby_Norikhsan90 
-TW_SCREEN_BLANK_ON_BOOT := true 
-TW_INPUT_BLACKLIST := "hbtp_vm" 
-TW_USE_TOOLBOX := true 
-TW_INCLUDE_FASTBOOTD := true 
-TW_INCLUDE_NTFS_3G := true 
-TW_NO_HAPTICS := true
 
-# Tools 
-TW_INCLUDE_RESETPROP := true 
-TW_INCLUDE_LIBRESETPROP :=true 
-TW_INCLUDE_REPACKTOOLS := true 
-  
 # Device config 
 TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 2000
