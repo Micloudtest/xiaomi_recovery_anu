@@ -115,35 +115,34 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
+TW_HAS_NO_RECOVERY_PARTITION := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 
 # Treble
 BOARD_VNDK_VERSION := current
    
- # TWRP Configuration
- TW_FRAMERATE := 60
- TW_THEME := portrait_hdpi 
- TW_DEVICE_VERSION := Ruby_Norikhsan90 
- TW_EXTRA_LANGUAGES := true 
- TW_SCREEN_BLANK_ON_BOOT := true 
- TW_INPUT_BLACKLIST := "hbtp_vm" 
- TW_USE_TOOLBOX := true 
- TW_INCLUDE_FASTBOOTD := true 
- TW_INCLUDE_NTFS_3G := true 
- TW_NO_HAPTICS := true
+# TWRP Configuration
+TW_FRAMERATE := 60
+TW_THEME := portrait_hdpi 
+TW_DEVICE_VERSION := Ruby_Norikhsan90 
+TW_EXTRA_LANGUAGES := true 
+TW_SCREEN_BLANK_ON_BOOT := true 
+TW_INPUT_BLACKLIST := "hbtp_vm" 
+TW_USE_TOOLBOX := true 
+TW_INCLUDE_FASTBOOTD := true 
+TW_INCLUDE_NTFS_3G := true 
+TW_NO_HAPTICS := true
 
- # Tools 
- TW_INCLUDE_RESETPROP := true 
- TW_INCLUDE_LIBRESETPROP :=true 
- TW_INCLUDE_REPACKTOOLS := true 
+# Tools 
+TW_INCLUDE_RESETPROP := true 
+TW_INCLUDE_LIBRESETPROP :=true 
+TW_INCLUDE_REPACKTOOLS := true 
   
- # Device config 
- TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness" 
- TW_MAX_BRIGHTNESS := 2000
- TW_DEFAULT_BRIGHTNESS := 1000 
- TW_EXCLUDE_DEFAULT_USB_INIT := true 
- RECOVERY_SDCARD_ON_DATA := true 
- TW_HAS_NO_RECOVERY_PARTITION := true  
+# Device config 
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_MAX_BRIGHTNESS := 2000
+TW_DEFAULT_BRIGHTNESS := 1000 
+TW_EXCLUDE_DEFAULT_USB_INIT := true   
   
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
