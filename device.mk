@@ -34,7 +34,7 @@ AB_OTA_PARTITIONS += \
   
  AB_OTA_POSTINSTALL_CONFIG += \ 
      RUN_POSTINSTALL_system=true \ 
-     POSTINSTALL_PATH_system=system/bin/ mtk_plpath_utils \
+     POSTINSTALL_PATH_system=system/bin/mtk_plpath_utils \
      FILESYSTEM_TYPE_system=erofs \ 
      POSTINSTALL_OPTIONAL_system=true 
 
