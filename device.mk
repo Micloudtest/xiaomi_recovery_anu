@@ -29,13 +29,20 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_PATH_system=system/bin/mtk_plpath_utils \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
+  
+ # HIDL 
+ PRODUCT_PACKAGES += \ 
+     android.hidl.base@1.0_system \ 
+     android.hidl.manager@1.0_system 
+  
+ # Health 
+ PRODUCT_PACKAGES += \ 
+     android.hardware.health@2.1-impl \ 
+     android.hardware.health@2.1-service
 
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0 \
-    android.hardware.boot@1.2-impl \
     android.hardware.boot@1.2-impl.recovery \
-    android.hardware.boot@1.2-service
 
 # Fastbootd
 PRODUCT_PACKAGES += \
@@ -46,8 +53,6 @@ PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
 
 PRODUCT_PACKAGES += \
-    otapreopt_script \
-    cppreopts.sh \
     update_engine \
     update_verifier \
     update_engine_sideload
