@@ -23,6 +23,11 @@ ENABLE_VIRTUAL_AB := true
      FILESYSTEM_TYPE_system=erofs \ 
      POSTINSTALL_OPTIONAL_system=true  
   
+  PRODUCT_PACKAGES += \ 
+     otapreopt_script \ 
+     cppreopts.sh \
+     mtk-plpath-utils
+
  # Boot control HAL 
  PRODUCT_PACKAGES += \ 
      android.hardware.boot@1.2-mtkimpl.recovery 
@@ -30,17 +35,15 @@ ENABLE_VIRTUAL_AB := true
  # Fastbootd 
  PRODUCT_PACKAGES += \ 
      android.hardware.fastboot@1.0-impl-mock \ 
-     fastbootd 
-  
- PRODUCT_PACKAGES_DEBUG += \ 
-     update_engine_client 
+     fastbootd  
   
  PRODUCT_PACKAGES += \ 
-     otapreopt_script \ 
-     cppreopts.sh \ 
      update_engine \ 
      update_verifier \ 
      update_engine_sideload
+
+ PRODUCT_PACKAGES_DEBUG += \ 
+     bootctl
 
 # Keymaster 
  TARGET_RECOVERY_DEVICE_MODULES += \ 
@@ -52,9 +55,3 @@ ENABLE_VIRTUAL_AB := true
      $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \ 
      $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \ 
      $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
-
-  # API 
- PRODUCT_SHIPPING_API_LEVEL := 31 
-  
- # VNDK
-PRODUCT_TARGET_VNDK_VERSION := 32
