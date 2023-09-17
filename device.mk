@@ -5,8 +5,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/ruby
-
 # Configure gsi_keys.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 
@@ -17,13 +15,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS += \
     boot \
-    dtbo \
     system \
-    system_ext \
     product \
     vendor \
-    odm \
-    vbmeta \
     vbmeta_system \
     vbmeta_vendor
 
@@ -44,28 +38,6 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl \
     android.hardware.boot@1.2-impl.recovery \
     android.hardware.boot@1.2-service
-
-
-
-PRODUCT_PACKAGES_DEBUG += \
-    bootctl
-
-PRODUCT_PACKAGES_DEBUG += \
-    update_engine_client
-
-# SHIPPING API
-PRODUCT_SHIPPING_API_LEVEL := 31
-
-# VNDK API
-PRODUCT_TARGET_VNDK_VERSION := 32
-
-# Soong namespaces
-PRODUCT_SOONG_NAMESPACES += \
-    $(DEVICE_PATH)
-
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-
 
 # Fastbootd
 PRODUCT_PACKAGES += \
