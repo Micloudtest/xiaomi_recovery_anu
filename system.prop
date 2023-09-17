@@ -8,27 +8,23 @@ ro.hardware.gatekeeper=beanpod
 ro.hardware.kmsetkey=beanpod
 
 # USB
-ro.sys.usb.storage.type=mtp
+ro.sys.usb.storage.type=mtp 
+  
+# Platform 
+ro.display.series=Redmi Note 12 pro 5G
+ro.board.platform=ruby
+  
+# FUSE passthrough 
+persist.sys.fuse.passthrough.enable=true 
 
-# Gatekeeper, Encryption 
- fbe.metadata.wrappedkey=true 
- vendor.gatekeeper.disable_spu=true 
+# Virtual A/B 
+ro.virtual_ab.enabled=true 
   
- # Platform 
- ro.display.series=Redmi Note 12 4G 
- ro.board.platform=bengal 
+# Dynamic Partitions 
+ro.boot.dynamic_partitions=true 
   
- # FUSE passthrough 
- persist.sys.fuse.passthrough.enable=true 
+# Charger suspend  
+ro.charger.enable_suspend=1 
   
- # Virtual A/B 
- ro.virtual_ab.enabled=true 
-  
- # Dynamic Partitions 
- ro.boot.dynamic_partitions=true 
-  
- # Charger suspend  
- ro.charger.enable_suspend=1 
-  
- # ADB 
- ro.adb.secure=0
+# ADB 
+ro.adb.secure=0
