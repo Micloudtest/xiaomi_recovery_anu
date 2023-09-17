@@ -119,22 +119,50 @@ TW_EXCLUDE_DEFAULT_USB_INIT := true
 # Treble
 BOARD_VNDK_VERSION := current
 
-# TWRP specific build flags
-TW_THEME := portrait_hdpi
-TW_DEVICE_VERSION := Ruby_Norikhsan90
-TW_INCLUDE_FASTBOOTD := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_INCLUDE_REPACKTOOLS := true
-TW_USE_TOOLBOX := true
-TW_EXTRA_LANGUAGES := true
-TW_INCLUDE_REPACKTOOLS := true
+# Display 
+ DEVICE_RESOLUTION := 1080x2400 
+ TARGET_SCREEN_DENSITY := 440 
+ TARGET_SCREEN_HEIGHT := 2400 
+ TARGET_SCREEN_WIDTH := 1080 
+  
+ # TWRP Configuration
+ TW_FRAMERATE := 60
+ TW_THEME := portrait_hdpi 
+ TW_DEVICE_VERSION := Ruby_Norikhsan90 
+ #TW_LOAD_VENDOR_MODULES := "haptic.ko" 
+ TW_EXTRA_LANGUAGES := true 
+ TW_SCREEN_BLANK_ON_BOOT := true 
+ TW_INPUT_BLACKLIST := "hbtp_vm" 
+ TW_USE_TOOLBOX := true 
+ TW_INCLUDE_FASTBOOTD := true 
+ TW_INCLUDE_NTFS_3G := true 
+ TW_EXCLUDE_TWRPAPP := true 
+ TW_EXCLUDE_APEX := true 
+ TW_NO_HAPTICS := true
 
-# Device config
-TW_FRAMERATE := 60
-TW_MAX_BRIGHTNESS := 2047
-TW_DEFAULT_BRIGHTNESS := 1200
-TW_NO_SCREEN_BLANK := true
-TW_NO_HAPTICS := true
+ # Tools 
+ TW_INCLUDE_RESETPROP := true 
+ TW_INCLUDE_LIBRESETPROP :=true 
+ TW_INCLUDE_REPACKTOOLS := true 
+  
+ # Device config 
+ TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness" 
+ TW_DEFAULT_BRIGHTNESS := 1000 
+ TW_EXCLUDE_DEFAULT_USB_INIT := true 
+ RECOVERY_SDCARD_ON_DATA := true 
+ TW_HAS_NO_RECOVERY_PARTITION := true 
+ TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file 
+ TW_BACKUP_EXCLUSIONS := /data/fonts 
+  
+ # StatusBar 
+ TW_STATUS_ICONS_ALIGN := center 
+ TW_CUSTOM_CPU_POS := "300" 
+ TW_CUSTOM_CLOCK_POS := "70" 
+ TW_CUSTOM_BATTERY_POS := "790" 
+  
+ # Haptic 
+ #TW_SUPPORT_INPUT_AIDL_HAPTICS :=true 
+ #TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature"
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
