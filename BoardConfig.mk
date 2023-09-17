@@ -124,7 +124,7 @@ BOARD_VNDK_VERSION := current
 # TWRP Configuration
 TW_FRAMERATE := 60
 TW_THEME := portrait_hdpi 
-TW_DEVICE_VERSION := Ruby_Norikhsan90 
+#TW_DEVICE_VERSION := Ruby_Norikhsan90 
 TW_SCREEN_BLANK_ON_BOOT := true 
 TW_INPUT_BLACKLIST := "hbtp_vm" 
 TW_USE_TOOLBOX := true 
