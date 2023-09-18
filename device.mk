@@ -58,9 +58,3 @@ PRODUCT_PACKAGES += \
      update_engine \ 
      update_verifier \ 
      update_engine_sideload
-
-# API 
- PRODUCT_SHIPPING_API_LEVEL := 31 
-  
- # VNDK 
- PRODUCT_TARGET_VNDK_VERSION := 32
