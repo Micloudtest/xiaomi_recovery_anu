@@ -16,24 +16,35 @@
  # Boot control HAL 
  PRODUCT_PACKAGES += \ 
     android.hidl.base@1.0 \
-    android.hardware.boot@1.2-impl \
-    android.hardware.boot@1.2-impl.recovery \
-    android.hardware.boot@1.2-service
+    android.hardware.boot@1.1-impl \ 
+    android.hardware.boot@1.1-impl.recovery \ 
+    android.hardware.boot@1.2-mtkimpl.recovery
 
-# Additional binaries & libraries needed for recovery
-TARGET_RECOVERY_DEVICE_MODULES += \
-    libkeymaster4 \
-    libkeymaster41 \
-    libpuresoftkeymasterdevice
-   
 # Fastbootd
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
     fastbootd
   
+# Keymaster 
+ TARGET_RECOVERY_DEVICE_MODULES += \ 
+     libkeymaster4 \ 
+     libkeymaster41 \ 
+     libpuresoftkeymasterdevice 
+  
+ RECOVERY_LIBRARY_SOURCE_FILES += \ 
+     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \ 
+     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \ 
+     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+   
  PRODUCT_PACKAGES += \ 
      otapreopt_script \ 
      cppreopts.sh \ 
      update_engine \ 
      update_verifier \ 
      update_engine_sideload
+
+# API 
+ PRODUCT_SHIPPING_API_LEVEL := 31 
+  
+ # VNDK 
+ PRODUCT_TARGET_VNDK_VERSION := 32
