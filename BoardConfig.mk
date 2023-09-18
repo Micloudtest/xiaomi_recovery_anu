@@ -22,6 +22,10 @@ AB_OTA_PARTITIONS += \
     vbmeta_system
 BOARD_USES_RECOVERY_AS_BOOT := true 
 
+TARGET_BOOTLOADER_BOARD_NAME := ruby
+TARGET_NO_BOOTLOADER := true
+TARGET_USES_UEFI := true
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -78,7 +82,7 @@ BOARD_SUPER_PARTITION_SIZE := 9126805504 # TODO: Fix hardcoded value
 BOARD_SUPER_PARTITION_GROUPS := xiaomi_dynamic_partitions
 BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST :=  \
     system \
-   	vendor \
+    vendor \
     product
 
 BOARD_XIAOMI_DYNAMIC_PARTITIONS_SIZE := 9122611200 # TODO: Fix hardcoded value
