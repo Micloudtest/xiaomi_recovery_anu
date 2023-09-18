@@ -11,21 +11,6 @@ PREBUILT_PATH := $(DEVICE_PATH)/prebuilt
 # For building with minimal manifest
 ALLOW_MISSING_DEPENDENCIES := true
 
-# Architecture
-TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-2a
-TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
-TARGET_CPU_VARIANT_RUNTIME := cortex-a78
-
-TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-2a
-TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
-TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
-
 # A/B
 AB_OTA_UPDATER := true
 TW_INCLUDE_REPACKTOOLS := true
@@ -41,11 +26,31 @@ AB_OTA_PARTITIONS := \
     vbmeta_system \
     vbmeta_vendor
 
+# Architecture
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-2a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_VARIANT_RUNTIME := cortex-a78
+
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv8-2a
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := generic
+TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := ruby
 TARGET_NO_BOOTLOADER := true
 
 # kernel
+BOARD_KERNEL_CMDLINE := \
+      bootopt=64S3,32N2,64N2 \
+      androidboot.tee_type=2
+
+BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_OFFSET := 0x00008000
 BOARD_KERNEL_PAGESIZE := 2048
@@ -56,10 +61,6 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz
 
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/kernel
 TARGET_PREBUILT_DTB := $(DEVICE_PATH)/prebuilt/dtb.img
-
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.tee_type=2
-BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
-
 
 BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
 BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
@@ -89,10 +90,10 @@ BOARD_DTBOIMG_PARTITION_SIZE := 33554432
 # Partitions (Dynamic)
 BOARD_SUPER_PARTITION_SIZE := 9126805504
 BOARD_SUPER_PARTITION_GROUPS := mediatek_dynamic_partitions
-BOARD_MEDIATEK_DYNAMIC_PARTITIONS_PARTITION_LIST := \
-    system \
-    system_ext \
-    product \
+BOARD_MEDIATEK_DYNAMIC_PARTITIONS_PARTITION_LIST := /
+    system /
+    system_ext /
+    product /
     vendor
 BOARD_MEDIATEK_DYNAMIC_PARTITIONS_SIZE := 4559208448
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
@@ -142,23 +143,17 @@ DEXPREOPT_GENERATE_APEX_IMAGE := true
 # Treble
 BOARD_VNDK_VERSION := current
   
-# TWRP Configuration 
-TW_THEME := portrait_hdpi 
-TW_DEVICE_VERSION := Ruby
-TW_EXTRA_LANGUAGES := true
-TW_SCREEN_BLANK_ON_BOOT := true
-TW_INPUT_BLACKLIST := "hbtp_vm"
-TW_USE_TOOLBOX := true
-TW_EXCLUDE_APEX := true
-TW_NO_SCREEN_BLANK := true
-TW_SCREEN_BLANK_ON_BOOT := true
-TARGET_USES_MKE2FS := true
-TW_EXCLUDE_TWRPAPP := true
-TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
-TW_MAX_BRIGHTNESS := 2047
-TW_DEFAULT_BRIGHTNESS := 1200
-TW_EXCLUDE_DEFAULT_USB_INIT := true 
-TW_NO_HAPTICS := true
+# TWRP Configuration
+ TW_FRAMERATE := 60 
+ TW_THEME := portrait_hdpi 
+ TW_DEVICE_VERSION := Ruby_Norikhsan90 
+ TW_EXTRA_LANGUAGES := true 
+ TW_SCREEN_BLANK_ON_BOOT := true 
+ TW_INPUT_BLACKLIST := "hbtp_vm" 
+ TW_USE_TOOLBOX := true
+ TW_INCLUDE_FASTBOOTD := true 
+ TW_INCLUDE_NTFS_3G := true 
+ TW_NO_HAPTICS := true
 
 # Hack: prevent anti rollback
 PLATFORM_SECURITY_PATCH := 2099-12-31
