@@ -5,59 +5,61 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
- Dynamic Partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-
-# Virtual A/B
 ENABLE_VIRTUAL_AB := true
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 
-# Enable project quotas and casefolding for emulated storage without sdcardfs
-$(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
 # Installs gsi keys into ramdisk, to boot a developer GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
-    
+
+ Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # A/B
-PRODUCT_PACKAGES += \
-    otapreopt_script
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS += \
+    boot \
+    system \
+    product \
+    vendor \
+    vbmeta_system \
+    vbmeta_vendor
+
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
-    FILESYSTEM_TYPE_system=ext4 \
+    FILESYSTEM_TYPE_system=erofs \
     POSTINSTALL_OPTIONAL_system=true
 
-# Boot Control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl.recovery \
-    android.hardware.boot@1.1-impl \
+    otapreopt_script \
+    cppreopts.sh 
 
-# Update Engine
+# Boot control HAL
 PRODUCT_PACKAGES += \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
-
-PRODUCT_PACKAGES_DEBUG += \
-    update_engine_client
+    android.hidl.base@1.0 \
+    android.hardware.boot@1.2-impl \
+    android.hardware.boot@1.2-impl.recovery \
+    android.hardware.boot@1.2-service
 
 # Fastbootd
 PRODUCT_PACKAGES += \
-	fastbootd \
-	android.hardware.fastboot@1.0-impl-mock
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
 
-# Health HAL
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-service \
-    android.hardware.health@2.1-impl
+    update_engine \
+    update_verifier \
+    update_engine_sideload
 
-# Additional Libraries
+# Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
+    libkeymaster41 \
     libpuresoftkeymasterdevice
 
-RECOVERY_LIBRARY_SOURCE_FILES += \
+TW_RECOVERY_ADDITIONAL_RELINK_LIBRARY_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster4.so \
+    $(TARGET_OUT_SHARED_LIBRARIES)/libkeymaster41.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+
