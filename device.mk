@@ -33,7 +33,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.1-impl.recovery \
     android.hardware.boot@1.1-impl \
-    bootctrl.mt6781.recovery
 
 # Update Engine
 PRODUCT_PACKAGES += \
