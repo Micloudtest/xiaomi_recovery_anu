@@ -30,7 +30,6 @@ AB_OTA_PARTITIONS += \
     vbmeta_system \
     vbmeta_vendor
 
-# A/B
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl \
     android.hardware.boot@1.2-impl.recovery \
