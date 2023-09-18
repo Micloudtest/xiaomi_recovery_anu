@@ -70,7 +70,6 @@ BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS += --board ""
 
 # Init
-TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):init_xiaomi_ruby
 TARGET_RECOVERY_DEVICE_MODULES := init_xiaomi_ruby
 
 # Kernel
