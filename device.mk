@@ -77,25 +77,9 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
 
-# Rootdir
-PRODUCT_PACKAGES += \
-    fstab.mt6877 \
-    fstab.mt6877.ramdisk \
-    ueventd.mt6877.rc
-
-PRODUCT_PACKAGES += \
-    init.recovery.mt6877.rc
-
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb-service.mediatek
-
-# Vibrator
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.vibrator.service.ruby
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/vibrator/excluded-input-devices.xml:$(TARGET_COPY_OUT_VENDOR)/etc/excluded-input-devices.xml
 
 # Additional target Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
