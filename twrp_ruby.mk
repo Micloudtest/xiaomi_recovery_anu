@@ -15,10 +15,10 @@ $(call inherit-product, vendor/twrp/config/common.mk)
 # Inherit from ruby device
 $(call inherit-product, device/xiaomi/ruby/device.mk)
 
-## Device identifier 
- PRODUCT_DEVICE := ruby
- PRODUCT_NAME := twrp_ruby
- PRODUCT_BRAND := redmi
- PRODUCT_MODEL := ruby
- PRODUCT_MANUFACTURER := Xiaomi 
+# Device identifier 
+ PRODUCT_DEVICE := ruby 
+ PRODUCT_NAME := twrp_ruby 
+ PRODUCT_BRAND := Redmi 
+ PRODUCT_MODEL := ruby 
+ PRODUCT_MANUFACTURER := xiaomi
   
