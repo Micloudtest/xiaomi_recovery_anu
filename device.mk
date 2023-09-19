@@ -62,10 +62,6 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
 
-# USB
-PRODUCT_PACKAGES += \
-    android.hardware.usb-service.mediatek
-
 # Keymaster
 TARGET_RECOVERY_DEVICE_MODULES += \
     libkeymaster4 \
