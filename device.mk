@@ -19,11 +19,6 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl.recovery \
     android.hardware.boot@1.2-service
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    libgptutils \
-    libz \
-    libcutils
-
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
