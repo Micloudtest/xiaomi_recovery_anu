@@ -4,6 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+  
 # Inherit virtual_ab_ota product
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/compression_retrofit.mk)
@@ -14,7 +15,22 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# A/B
+# For building with minimal manifest 
+ ALLOW_MISSING_DEPENDENCIES := true 
+
+ # A/B 
+ AB_OTA_UPDATER := true 
+ AB_OTA_PARTITIONS := \ 
+     boot \ 
+     dtbo \ 
+     system \ 
+     system_ext \ 
+     product \ 
+     vendor \ 
+     vbmeta \ 
+     vbmeta_system \ 
+     vbmeta_vendor
+
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl \
     android.hardware.boot@1.2-impl.recovery \
