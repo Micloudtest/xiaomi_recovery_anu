@@ -13,10 +13,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 
 
 # A/B
+# Boot control HAL
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl \
     android.hardware.boot@1.2-impl.recovery \
     android.hardware.boot@1.2-service
+
+PRODUCT_PACKAGES += \
+    bootctrl.mt6877
+
+PRODUCT_STATIC_BOOT_CONTROL_HAL := \
+    bootctrl.mt6877 \
+    libgptutils \
+    libz \
+    libcutils
 
 PRODUCT_PACKAGES += \
     update_engine \
