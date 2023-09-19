@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/ruby/device.mk)
 
 
-PRODUCT_NAME := lineage_ruby
+PRODUCT_NAME := twrp_ruby
 PRODUCT_DEVICE := ruby
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Redmi
