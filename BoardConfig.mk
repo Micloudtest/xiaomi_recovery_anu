@@ -41,7 +41,7 @@ AB_OTA_PARTITIONS := \
  TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55 
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := ruby
+TARGET_BOOTLOADER_BOARD_NAME := ruby rubypro
 TARGET_NO_BOOTLOADER := true
 
 # Display
@@ -92,6 +92,15 @@ TARGET_BOARD_PLATFORM := mt6877
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
+# Assert 
+TARGET_OTA_ASSERT_DEVICE := ruby rubypro 
+  
+# Properties 
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop 
+  
+# fstab 
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
