@@ -45,6 +45,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 TARGET_BOOTLOADER_BOARD_NAME := ruby
 
 # kernel
+BOARD_BOOTIMG_HEADER_VERSION := 2
 BOARD_KERNEL_CMDLINE := \
       bootopt=64S3,32N2,64N2 \
       androidboot.tee_type=2
