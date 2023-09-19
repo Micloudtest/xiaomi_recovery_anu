@@ -1,3 +1,12 @@
+# Charger
+ro.charger.enable_suspend=true
+
+# Dalvik
+dalvik.vm.dex2oat64.enabled=true
+
+# Zygote
+zygote.critical_window.minute=10
+
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
 
