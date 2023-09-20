@@ -104,6 +104,8 @@ AB_OTA_PARTITIONS := \
          vendor \
          product
 
+ BOARD_SYSTEMIMAGE_PARTITION_TYPE := erofs
+ BOARD_SYSTEM_EXTIMAGE_PARTITION_TYPE := erofs
  BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs 
   
  # Filesystems 
