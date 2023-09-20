@@ -37,6 +37,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
 
 # Keymaster
 TARGET_RECOVERY_DEVICE_MODULES += \
