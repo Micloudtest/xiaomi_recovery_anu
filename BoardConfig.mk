@@ -62,10 +62,6 @@
  # Use LZ4 Ramdisk compression instead of GZIP 
  BOARD_RAMDISK_USE_LZ4 := true 
   
- # Power 
- ENABLE_CPUSETS    := true 
- ENABLE_SCHEDBOOST := true 
-  
  # A/B
 AB_OTA_UPDATER := true
 AB_OTA_PARTITIONS := \
@@ -96,8 +92,6 @@ AB_OTA_PARTITIONS := \
  BOARD_DTB_OFFSET                      := 0x07c08000
   
  BOARD_USES_METADATA_PARTITION := true 
- BOARD_USES_VENDOR_DLKMIMAGE   := true 
- BOARD_USES_SYSTEM_DLKMIMAGE   := true
  BOARD_USES_SYSTEM_EXTIMAGE    := true 
   
  # Dynamic Partitions 
@@ -110,10 +104,6 @@ AB_OTA_PARTITIONS := \
          vendor \
          product
 
- BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST)) 
- $(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs)) 
- $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p)))) 
-  
  BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs 
   
  # Filesystems 
@@ -123,7 +113,7 @@ AB_OTA_PARTITIONS := \
  BOARD_HAS_LARGE_FILESYSTEM    := true 
   
  # Workaround for error copying vendor files to recovery ramdisk 
- BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4 
+ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
  TARGET_COPY_OUT_VENDOR := vendor 
   
  # System Properties 
