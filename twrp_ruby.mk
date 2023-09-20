@@ -11,9 +11,6 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device makefile.
 $(call inherit-product, device/xiaomi/ruby/device.mk)
 
-# Inherit from TWRP common configuration 
- $(call inherit-product, vendor/twrp/config/common.mk)
-
 
 ## Device identifier 
  PRODUCT_DEVICE := ruby 
