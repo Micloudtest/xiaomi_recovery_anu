@@ -119,7 +119,6 @@ AB_OTA_PARTITIONS := \
  $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p)))) 
   
  BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs 
- TARGET_COPY_OUT_SYSTEM_EXT := system_ext 
   
  # Filesystems 
  TARGET_USERIMAGES_USE_EXT4    := true 
