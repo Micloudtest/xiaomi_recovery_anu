@@ -24,6 +24,7 @@ AB_OTA_PARTITIONS := \
     vbmeta \
     vbmeta_system \
     vbmeta_vendor
+BOARD_USES_RECOVERY_AS_BOOT := true 
 
 # Architecture 
  TARGET_ARCH := arm64 
@@ -41,7 +42,7 @@ AB_OTA_PARTITIONS := \
  TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55 
 
 # Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := ruby rubypro
+TARGET_BOOTLOADER_BOARD_NAME := ruby
 TARGET_NO_BOOTLOADER := true
 
 # Kernel
@@ -106,7 +107,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Recovery
-BOARD_USES_RECOVERY_AS_BOOT := true
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
 
 # System as Root
