@@ -1,18 +1,22 @@
-# Charger
-ro.charger.enable_suspend=true
-
-# Zygote
-zygote.critical_window.minute=10
-
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
-
-# TEE
-ro.vendor.mtk_tee_gp_support=1
-ro.vendor.mtk_microtrust_tee_support=1
 
 # Gatekeeper
 ro.hardware.gatekeeper=beanpod
 
-# Kmsetkey
-ro.hardware.kmsetkey=beanpod
+# Keymaster
+ro.hardware.kmsetkey=beanpod 
+
+# Platform 
+ro.display.series=Redmi Note 12 pro 5G
+ro.board.platform=ruby
+
+# Virtual A/B 
+ro.virtual_ab.enabled=true 
+  
+# Dynamic Partitions 
+ro.boot.dynamic_partitions=true 
+
+# TEE
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_microtrust_tee_support=1
