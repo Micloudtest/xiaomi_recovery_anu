@@ -55,10 +55,6 @@
  BOARD_INCLUDE_DTB_IN_BOOTIMG :=  
  endif 
 
- # GSI && GKI 
- BOARD_USES_GENERIC_KERNEL_IMAGE := true 
- BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true 
-   
  # Despite being VA/B device, there is a dedicated recovery partition 
  BOARD_USES_RECOVERY_AS_BOOT := true 
  BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := false 
