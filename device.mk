@@ -3,19 +3,7 @@
  # 
  # SPDX-License-Identifier: Apache-2.0 
  # 
-  
- # Configure Virtual A/B 
- $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk) 
-  
- # Enable updating of APEXes 
- $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk) 
-  
- # Enable developer GSI keys 
- $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk) 
-  
- # Configure emulated_storage.mk 
- $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk) 
-  
+
  # Building with minimal manifest 
  ALLOW_MISSING_DEPENDENCIES := true 
   
