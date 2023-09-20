@@ -93,7 +93,7 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
 # Assert 
-TARGET_OTA_ASSERT_DEVICE := ruby rubypro 
+TARGET_OTA_ASSERT_DEVICE := ruby 
   
 # Properties 
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop 
