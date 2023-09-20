@@ -72,8 +72,6 @@
   
  # A/B
 AB_OTA_UPDATER := true
-TW_INCLUDE_REPACKTOOLS := true
-
 AB_OTA_PARTITIONS := \
     boot \
     dtbo \
