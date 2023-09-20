@@ -11,9 +11,6 @@
  # Virtual A/B 
  ro.virtual_ab.enabled=true 
   
- # Dynamic Partitions 
- ro.boot.dynamic_partitions=true 
-  
  # Charger suspend  
  ro.charger.enable_suspend=1 
 
