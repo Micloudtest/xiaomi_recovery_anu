@@ -16,10 +16,10 @@ $(call inherit-product, device/xiaomi/ruby/device.mk)
 
 
 ## Device identifier 
- PRODUCT_DEVICE := tapas 
- PRODUCT_NAME := twrp_tapas 
+ PRODUCT_DEVICE := ruby 
+ PRODUCT_NAME   := twrp_ruby
  PRODUCT_BRAND := Xiaomi 
- PRODUCT_MODEL := Redmi Note 12 4G 
+ PRODUCT_MODEL := Redmi Note 12 Pro 5G
  PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
