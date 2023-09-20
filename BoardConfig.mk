@@ -40,6 +40,7 @@
  TARGET_KERNEL_CLANG_COMPILE   := true
  BOARD_INCLUDE_DTB_IN_BOOTIMG := true
  BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
+ BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=bootloader
  BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
  BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
  BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
@@ -102,7 +103,7 @@ AB_OTA_PARTITIONS := \
   
  BOARD_USES_METADATA_PARTITION := true 
  BOARD_USES_VENDOR_DLKMIMAGE   := true 
- BO_USES_SYSTEM_DLKMIMAGE      := true 
+ BOARD_USES_SYSTEM_DLKMIMAGE   := true
  BOARD_USES_SYSTEM_EXTIMAGE    := true 
   
  # Dynamic Partitions 
@@ -146,4 +147,5 @@ AB_OTA_PARTITIONS := \
  TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab 
 
  # Debug
+ TARGET_USES_LOGD := true
  TWRP_INCLUDE_LOGCAT := true
