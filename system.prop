@@ -8,9 +8,6 @@
  ro.mediatek.platform=MT6877
  ro.hardware=mt6877
   
- # Virtual A/B 
- ro.virtual_ab.enabled=true 
-  
  # Charger suspend  
  ro.charger.enable_suspend=1 
 
