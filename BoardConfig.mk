@@ -93,7 +93,7 @@ BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 
 # Assert 
-TARGET_OTA_ASSERT_DEVICE := ruby 
+TARGET_OTA_ASSERT_DEVICE := ruby,rubypro
   
 # Properties 
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop 
@@ -121,7 +121,14 @@ TW_INCLUDE_CRYPTO_FBE := true
 
 # Treble
 BOARD_VNDK_VERSION := current
-  
+
+ifneq ($(OF_HIDE_NOTCH),1) 
+     # Configure Status bar icons for regular TWRP builds only 
+     TW_CUSTOM_CLOCK_POS := 40 
+     TW_CUSTOM_CPU_POS := 605 
+     TW_STATUS_ICONS_ALIGN := center 
+ endif
+ 
 # TWRP Configuration
  TW_FRAMERATE := 60 
  TW_THEME := portrait_hdpi 
