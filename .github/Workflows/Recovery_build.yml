@@ -17,7 +17,7 @@
        DEVICE_TREE_URL: 
          description: 'DEVICE_TREE_URL' 
          required: true 
-         default: 'https://github.com/chickendrop89/orangefox_device_xiaomi_tapas' 
+         default: 'https://github.com/micloudtest/xiaomi_recovery_anu.git' 
        DEVICE_TREE_BRANCH: 
          description: 'DEVICE_TREE_BRANCH' 
          required: true 
@@ -25,23 +25,23 @@
        DEVICE_PATH: 
          description: 'DEVICE_PATH' 
          required: true 
-         default: 'device/xiaomi/tapas' 
+         default: 'device/xiaomi/ruby' 
        DEVICE_NAME: 
          description: 'DEVICE_NAME' 
          required: true 
-         default: 'tapas' 
+         default: 'ruby' 
        DEVICE_VARIANT: 
          description: 'DEVICE_VARIANT' 
          required: true 
-         default: 'tapas/topaz-A13' 
+         default: 'ruby-A13' 
        MAKEFILE_NAME: 
          description: 'MAKEFILE_NAME' 
          required: true 
-         default: 'twrp_tapas' 
+         default: 'twrp_ruby' 
        BUILD_TARGET: 
          description: 'BUILD_TARGET' 
          required: true 
-         default: 'recovery' 
+         default: 'boot' 
   
  jobs: 
    build: 
