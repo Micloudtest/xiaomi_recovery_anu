@@ -37,8 +37,8 @@
  TARGET_KERNEL_CONFIG          := ruby_defconfig
  TARGET_KERNEL_SOURCE          := kernel/xiaomi/ruby
  BOARD_BOOT_HEADER_VERSION     := 2 
- TARGET_KERNEL_CLANG_COMPILE   := true
  BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+
  BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
  BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=bootloader
  BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
@@ -54,10 +54,6 @@
  BOARD_MKBOOTIMG_ARGS   += --dtb $(TARGET_PREBUILT_DTB)  
  BOARD_INCLUDE_DTB_IN_BOOTIMG :=  
  endif 
-
- # Despite being VA/B device, there is a dedicated recovery partition 
- BOARD_USES_RECOVERY_AS_BOOT := true 
- BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := false 
   
  # Use LZ4 Ramdisk compression instead of GZIP 
  BOARD_RAMDISK_USE_LZ4 := true 
@@ -121,7 +117,7 @@ AB_OTA_PARTITIONS := \
  # System Properties 
  TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop 
   
- # Recovery 
+ # Despite being VA/B device, there is a dedicated recovery partition  
  BOARD_HAS_LARGE_FILESYSTEM     := true 
  BOARD_HAS_NO_SELECT_BUTTON     := true 
  BOARD_SUPPRESS_SECURE_ERASE    := true 
