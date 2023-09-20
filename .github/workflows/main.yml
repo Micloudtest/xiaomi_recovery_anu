@@ -17,11 +17,11 @@
        DEVICE_TREE_URL: 
          description: 'DEVICE_TREE_URL' 
          required: true 
-         default: 'https://github.com/micloudtest/xiaomi_recovery_anu.git' 
+         default: 'https://github.com/Micloudtest/xiaomi_recovery_anu.git' 
        DEVICE_TREE_BRANCH: 
          description: 'DEVICE_TREE_BRANCH' 
          required: true 
-         default: '12.1' 
+         default: 'recovery' 
        DEVICE_PATH: 
          description: 'DEVICE_PATH' 
          required: true 
