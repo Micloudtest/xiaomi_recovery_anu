@@ -122,7 +122,6 @@ AB_OTA_PARTITIONS := \
   
  BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs 
  TARGET_COPY_OUT_SYSTEM_EXT := system_ext 
- TARGET_COPY_OUT_PRODUCT    := product 
   
  # Filesystems 
  TARGET_USERIMAGES_USE_EXT4    := true 
@@ -148,4 +147,3 @@ AB_OTA_PARTITIONS := \
 
  # Debug
  TARGET_USES_LOGD := true
- TWRP_INCLUDE_LOGCAT := true
