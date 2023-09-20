@@ -19,7 +19,7 @@
  #         Please maintain this if you use this script or any part of it 
  # 
   
- FDEVICE="ruby" 
+ FDEVICE="rosemary" 
  #set -o xtrace 
   
  fox_get_target_device() { 
@@ -38,14 +38,16 @@
   
  # Dirty Fix: Only declare orangefox vars when needed 
  if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then 
-         echo -e "\x1b[96m[INFO]: Setting up OrangeFox build vars for evergreen...\x1b[m" 
+         echo -e "\x1b[96m[INFO]: Setting up OrangeFox build vars for rosemary...\x1b[m" 
          if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then 
                  # Version / Maintainer infos 
                  export OF_MAINTAINER="Norikhsan90" 
                  export FOX_VERSION=R12.1_0 
-                 export FOX_BUILD_TYPE="Unoficial_Beta" 
+                 export FOX_BUILD_TYPE="Beta" 
   
                  # Device info 
+                 export OF_AB_DEVICE=1 
+                 export OF_VIRTUAL_AB_DEVICE=1 
                  export TARGET_DEVICE_ALT="ruby, rubypro" 
   
                  # OTA / DM-Verity / Encryption 
@@ -66,6 +68,7 @@
                  export OF_HIDE_NOTCH=1 
                  export OF_CLOCK_POS=1 # left and right clock positions available 
                  export OF_USE_GREEN_LED=0 
+                 export OF_FL_PATH1="/tmp/flashlight" # See /init.recovery.mt6785.rc for more information 
   
                  # Other OrangeFox configs 
                  export OF_ENABLE_LPTOOLS=1 
@@ -73,7 +76,7 @@
          export OF_QUICK_BACKUP_LIST="/boot;/data;" 
                  export FOX_BUGGED_AOSP_ARB_WORKAROUND="1546300800" # Tue Jan 1 2019 00:00:00 GMT 
                  export FOX_DELETE_AROMAFM=1 
-                 export FOX_USE_SPECIFIC_MAGISK_ZIP="$(gettop)/device/xiaomi/ruby/Magisk/Magisk.zip" 
+                 export FOX_USE_SPECIFIC_MAGISK_ZIP="$(gettop)/device/redmi/rosemary/Magisk/Magisk.zip" 
   
          export BUNDLED_MAGISK_VER="25.2" 
          export BUNDLED_MAGISK_SUM="0bdc32918b6ea502dca769b1c7089200da51ea1def170824c2812925b426d509" # Sha256 sum of the prebuilt magisk 
@@ -115,5 +118,4 @@
                  unset "FOX_USE_SPECIFIC_MAGISK_ZIP" 
              fi 
          fi 
-     fi 
- fi
+     fi
