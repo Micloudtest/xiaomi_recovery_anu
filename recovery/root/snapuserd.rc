@@ -1,1 +1,6 @@
-g
+service snapuserd /system/bin/snapuserd 
+     socket snapuserd stream 0660 system system 
+     oneshot 
+     disabled 
+     user root 
+     group root system
