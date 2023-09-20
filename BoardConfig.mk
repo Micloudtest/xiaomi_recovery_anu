@@ -115,7 +115,7 @@ AB_OTA_PARTITIONS := \
  BOARD_HAS_LARGE_FILESYSTEM    := true 
   
  # Workaround for error copying vendor files to recovery ramdisk 
- BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
  TARGET_COPY_OUT_VENDOR := vendor 
   
  # System Properties 
