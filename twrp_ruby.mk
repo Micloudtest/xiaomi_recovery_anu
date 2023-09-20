@@ -11,8 +11,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from device makefile.
 $(call inherit-product, device/xiaomi/ruby/device.mk)
 
-PRODUCT_DEVICE := ruby
-PRODUCT_NAME := twrp_ruby
-PRODUCT_BRAND := Redmi
-PRODUCT_MODEL := Redmi Note 12 Pro 5G
-PRODUCT_MANUFACTURER := Xiaomi
+## Device identifier 
+ PRODUCT_DEVICE := tapas 
+ PRODUCT_NAME := twrp_tapas 
+ PRODUCT_BRAND := Xiaomi 
+ PRODUCT_MODEL := Redmi Note 12 4G 
+ PRODUCT_MANUFACTURER := Xiaomi
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
