@@ -70,10 +70,7 @@
  # Set panel refresh rate to 90 Hertz for smoother experience 
  # Possible supported frequencies: 30, 60, 90, 120 
  TW_FRAMERATE := 90 
-  
- TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone7/temp" 
- TW_BRIGHTNESS_PATH      := "/sys/class/backlight/panel0-backlight/brightness" 
-
+ 
  TW_BATTERY_SYSFS_WAIT_SECONDS := 6 
  TW_EXCLUDE_DEFAULT_USB_INIT   := true 
  TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true 
