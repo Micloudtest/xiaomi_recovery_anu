@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 #
-  
+
 # A/B
 # Boot control HAL
 PRODUCT_PACKAGES += \
