@@ -10,9 +10,6 @@ ro.hardware.kmsetkey=beanpod
 # Platform 
 ro.display.series=Redmi Note 12 pro 5G
 ro.board.platform=ruby
-
-# Virtual A/B 
-ro.virtual_ab.enabled=true 
   
 # Dynamic Partitions 
 ro.boot.dynamic_partitions=true 
