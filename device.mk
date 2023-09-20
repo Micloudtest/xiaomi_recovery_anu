@@ -30,18 +30,10 @@
      otapreopt_script \ 
      checkpoint_gc 
   
- # API 
- PRODUCT_SHIPPING_API_LEVEL  := 31 
- PRODUCT_TARGET_VNDK_VERSION := 33 
-  
  # Display Size & Density 
  TARGET_SCREEN_HEIGHT  := 2400 
  TARGET_SCREEN_DENSITY := 390 
  TARGET_SCREEN_WIDTH   := 1080 
-  
- # Dynamic partitions 
- PRODUCT_USE_DYNAMIC_PARTITIONS := true 
- PRODUCT_BUILD_SUPER_PARTITION  := false 
   
  # Virutal A/B 
  ENABLE_VIRTUAL_AB := true 
@@ -56,12 +48,6 @@
      POSTINSTALL_PATH_vendor=bin/checkpoint_gc \ 
      FILESYSTEM_TYPE_vendor=erofs \ 
      POSTINSTALL_OPTIONAL_vendor=true 
-  
- PRODUCT_EXTRA_RECOVERY_KEYS += \ 
-     vendor/recovery/security/miui 
-  
- # Soong namespaces 
- PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH) 
   
  # TWRP - Specifics 
  TW_THEME                := portrait_hdpi 
@@ -96,7 +82,6 @@
  TW_INCLUDE_CRYPTO               := true 
  TW_INCLUDE_CRYPTO_FBE           := true 
  TW_INCLUDE_FBE_METADATA_DECRYPT := true 
- BOARD_USES_QCOM_FBE_DECRYPTION  := true 
  PLATFORM_VERSION                := 99.87.36 
  PLATFORM_VERSION_LAST_STABLE    := $(PLATFORM_VERSION) 
   
