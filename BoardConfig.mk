@@ -5,7 +5,23 @@
  # 
   
  DEVICE_PATH := device/xiaomi/ruby
-  
+
+ # For building with minimal manifest  
+ ALLOW_MISSING_DEPENDENCIES := true 
+
+ # A/B
+ AB_OTA_UPDATER := true
+ AB_OTA_PARTITIONS := \
+    boot \
+    dtbo \
+    system \
+    system_ext \
+    product \
+    vendor \
+    vbmeta \
+    vbmeta_system \
+    vbmeta_vendor
+
  # Architecture 
  TARGET_ARCH             := arm64 
  TARGET_ARCH_VARIANT     := armv8-a 
@@ -27,7 +43,6 @@
   
  # Platform 
  TARGET_BOARD_PLATFORM         := mt6877
- TARGET_OTA_ASSERT_DEVICE      := ruby,rubypro
   
  # Kernel 
  BOARD_KERNEL_PAGESIZE         := 2048 
@@ -53,19 +68,6 @@
  BOARD_MKBOOTIMG_ARGS   += --dtb $(TARGET_PREBUILT_DTB)  
  BOARD_INCLUDE_DTB_IN_BOOTIMG :=  
  endif 
-  
- # A/B
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS := \
-    boot \
-    dtbo \
-    system \
-    system_ext \
-    product \
-    vendor \
-    vbmeta \
-    vbmeta_system \
-    vbmeta_vendor
   
  # Verified Boot 
  BOARD_AVB_ENABLE := true
