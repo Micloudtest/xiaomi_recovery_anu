@@ -23,12 +23,7 @@
   export OF_DONT_PATCH_ENCRYPTED_DEVICE=1 
   
   # A/B partitions 
-  export FOX_VIRTUAL_AB_DEVICE=1 
-  export OF_AB_DEVICE_WITH_RECOVERY_PARTITION=1 
-  
-  # Flashlight path & Green LED 
-  export OF_FL_PATH1=/system/etc/flashlight 
-  export OF_USE_GREEN_LED=0 
+  export FOX_VIRTUAL_AB_DEVICE=1  
   
   # Removes the loop block errors after flashing ZIPs (Workaround) 
   export OF_LOOP_DEVICE_ERRORS_TO_LOG=1 
