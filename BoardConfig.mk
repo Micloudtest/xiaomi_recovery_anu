@@ -94,18 +94,17 @@ AB_OTA_PARTITIONS := \
          product
 
  BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
- BOARD_SYSTEM_EXTIMAGE_PARTITION_TYPE := ext4
  BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs 
-  
- # Filesystems 
- TARGET_USERIMAGES_USE_EXT4    := true 
- TARGET_USERIMAGES_USE_F2FS    := true 
- TARGET_USES_MKE2FS            := true 
   
  # Workaround for error copying vendor files to recovery ramdisk 
  BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
  TARGET_COPY_OUT_VENDOR := vendor 
   
+ # Filesystems 
+ TARGET_USERIMAGES_USE_EXT4    := true 
+ TARGET_USERIMAGES_USE_F2FS    := true 
+ TARGET_USES_MKE2FS            := true 
+
  # System Properties 
  TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop 
   
