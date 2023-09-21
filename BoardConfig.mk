@@ -40,8 +40,6 @@
  BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 
  BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
- BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=bootloader
- BOARD_MKBOOTIMG_ARGS += --dtb $(TARGET_PREBUILT_DTB)
  BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOTIMG_HEADER_VERSION)
  BOARD_MKBOOTIMG_ARGS += --ramdisk_offset $(BOARD_RAMDISK_OFFSET)
  BOARD_MKBOOTIMG_ARGS += --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
@@ -54,9 +52,6 @@
  BOARD_MKBOOTIMG_ARGS   += --dtb $(TARGET_PREBUILT_DTB)  
  BOARD_INCLUDE_DTB_IN_BOOTIMG :=  
  endif 
-  
- # Use LZ4 Ramdisk compression instead of GZIP 
- BOARD_RAMDISK_USE_LZ4 := true 
   
  # A/B
 AB_OTA_UPDATER := true
@@ -108,7 +103,6 @@ AB_OTA_PARTITIONS := \
  TARGET_USERIMAGES_USE_EXT4    := true 
  TARGET_USERIMAGES_USE_F2FS    := true 
  TARGET_USES_MKE2FS            := true 
- BOARD_HAS_LARGE_FILESYSTEM    := true 
   
  # Workaround for error copying vendor files to recovery ramdisk 
  BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
