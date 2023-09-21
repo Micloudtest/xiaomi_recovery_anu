@@ -2,7 +2,7 @@
   
  # Version / Maintainer infos 
   export OF_MAINTAINER="Norikhsan90" 
-  export FOX_VERSION= "R12.1_0  (Android 13)"
+  export FOX_VERSION= "R12.1_0"
   export FOX_BUILD_TYPE="Unoficial_Beta" 
   
   # OrangeFox Addons 
