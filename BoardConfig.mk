@@ -119,5 +119,35 @@
  TARGET_NO_RECOVERY             := true
  TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab 
 
+ # TWRP - Specifics 
+ TW_THEME                := portrait_hdpi 
+ TW_DEFAULT_LANGUAGE     := en 
+ TW_USE_TOOLBOX          := true 
+ TW_INCLUDE_NTFS_3G      := true  
+ TW_INCLUDE_REPACKTOOLS  := true 
+ TW_INCLUDE_RESETPROP    := true 
+ TW_MAX_BRIGHTNESS       := 2047 
+ TW_DEFAULT_BRIGHTNESS   := 200 
+ TW_EXCLUDE_APEX         := true 
+ TW_INCLUDE_FASTBOOTD    := true 
+  
+ # Set panel refresh rate to 90 Hertz for smoother experience 
+ # Possible supported frequencies: 30, 60, 90, 120 
+ TW_FRAMERATE := 90 
+ TW_BATTERY_SYSFS_WAIT_SECONDS := 6 
+ TW_EXCLUDE_DEFAULT_USB_INIT   := true 
+  
+ # TWRP - Crypto 
+ TW_INCLUDE_CRYPTO               := true 
+ TW_INCLUDE_CRYPTO_FBE           := true 
+ TW_INCLUDE_FBE_METADATA_DECRYPT := true 
+ 
+# Hack: prevent anti rollback 
+ PLATFORM_SECURITY_PATCH      := 2099-12-31 
+ VENDOR_SECURITY_PATCH        := 2099-12-31 
+ PLATFORM_VERSION             := 20.1.0 
+ PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
+
  # Debug
- TARGET_USES_LOGD := true
+ TARGET_USES_LOGD        := true
+ TWRP_INCLUDE_LOGCAT     := true 
