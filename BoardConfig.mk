@@ -67,7 +67,8 @@ AB_OTA_PARTITIONS := \
     vbmeta_vendor
   
  # Verified Boot 
- BOARD_AVB_ENABLE := true 
+ BOARD_AVB_ENABLE := true
+ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3 
   
  # VNDK Treble 
  BOARD_VNDK_VERSION := current 
@@ -80,10 +81,7 @@ AB_OTA_PARTITIONS := \
  BOARD_KERNEL_BASE                     := 0x40078000
  BOARD_KERNEL_TAGS_OFFSET              := 0x07c08000
  BOARD_RAMDISK_OFFSET                  := 0x11088000
- BOARD_DTB_OFFSET                      := 0x07c08000
-  
- BOARD_USES_METADATA_PARTITION := true 
- BOARD_USES_SYSTEM_EXTIMAGE    := true 
+ BOARD_DTB_OFFSET                      := 0x07c08000 
   
  # Dynamic Partitions 
  BOARD_SUPER_PARTITION_SIZE        := 9126805504 
