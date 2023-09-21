@@ -10,7 +10,7 @@
  # Boot control, Firmware 
  PRODUCT_PACKAGES += \ 
      android.hardware.boot@1.2-impl.recovery \ 
-     miui_prebuilt 
+      
   
  # FastbootD support 
  PRODUCT_PACKAGES += \ 
