@@ -4,9 +4,6 @@
  # SPDX-License-Identifier: Apache-2.0 
  # 
 
- # Building with minimal manifest 
- ALLOW_MISSING_DEPENDENCIES := true 
-  
 # A/B 
  # Boot control HAL 
  PRODUCT_PACKAGES += \ 
@@ -50,9 +47,7 @@
  TW_THEME                := portrait_hdpi 
  TW_DEFAULT_LANGUAGE     := en 
  TW_USE_TOOLBOX          := true 
- TW_INCLUDE_NTFS_3G      := true 
- TW_INCLUDE_FUSE_EXFAT   := true 
- TW_INCLUDE_FUSE_NTFS    := true 
+ TW_INCLUDE_NTFS_3G      := true  
  TW_INCLUDE_REPACKTOOLS  := true 
  TW_INCLUDE_RESETPROP    := true 
  TW_INCLUDE_LIBRESETPROP := true 
@@ -66,7 +61,6 @@
  # Set panel refresh rate to 90 Hertz for smoother experience 
  # Possible supported frequencies: 30, 60, 90, 120 
  TW_FRAMERATE := 90 
- 
  TW_BATTERY_SYSFS_WAIT_SECONDS := 6 
  TW_EXCLUDE_DEFAULT_USB_INIT   := true 
   
