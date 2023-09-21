@@ -63,7 +63,6 @@
  TW_EXTRA_LANGUAGES      := true 
  TW_DEFAULT_BRIGHTNESS   := 200 
  TW_EXCLUDE_APEX         := true 
- TW_HAS_EDL_MODE         := true 
  TW_INCLUDE_FASTBOOTD    := true 
  TWRP_INCLUDE_LOGCAT     := true 
   
@@ -73,7 +72,6 @@
  
  TW_BATTERY_SYSFS_WAIT_SECONDS := 6 
  TW_EXCLUDE_DEFAULT_USB_INIT   := true 
- TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true 
   
  # TWRP - Crypto 
  TW_INCLUDE_CRYPTO               := true 
