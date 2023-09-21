@@ -67,8 +67,9 @@ AB_OTA_PARTITIONS := \
     vbmeta_vendor
   
  # Verified Boot 
- BOARD_AVB_ENABLE := true 
-  
+ BOARD_AVB_ENABLE := true
+ BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3 
+
  # VNDK Treble 
  BOARD_VNDK_VERSION := current 
 
