@@ -7,10 +7,12 @@
  # Building with minimal manifest 
  ALLOW_MISSING_DEPENDENCIES := true 
   
- # Boot control, Firmware 
+# A/B 
+ # Boot control HAL 
  PRODUCT_PACKAGES += \ 
+     android.hardware.boot@1.2-impl \ 
      android.hardware.boot@1.2-impl.recovery \ 
-      
+     android.hardware.boot@1.2-service
   
  # FastbootD support 
  PRODUCT_PACKAGES += \ 
