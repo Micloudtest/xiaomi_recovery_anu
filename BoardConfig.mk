@@ -93,8 +93,8 @@ AB_OTA_PARTITIONS := \
          vendor \
          product
 
- BOARD_SYSTEMIMAGE_PARTITION_TYPE := erofs
- BOARD_SYSTEM_EXTIMAGE_PARTITION_TYPE := erofs
+ BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
+ BOARD_SYSTEM_EXTIMAGE_PARTITION_TYPE := ext4
  BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs 
   
  # Filesystems 
@@ -103,7 +103,7 @@ AB_OTA_PARTITIONS := \
  TARGET_USES_MKE2FS            := true 
   
  # Workaround for error copying vendor files to recovery ramdisk 
- BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
+ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
  TARGET_COPY_OUT_VENDOR := vendor 
   
  # System Properties 
