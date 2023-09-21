@@ -28,12 +28,7 @@
   
  PRODUCT_PACKAGES += \ 
      otapreopt_script \ 
-     checkpoint_gc 
-  
- # Display Size & Density 
- TARGET_SCREEN_HEIGHT  := 2400 
- TARGET_SCREEN_DENSITY := 390 
- TARGET_SCREEN_WIDTH   := 1080 
+     checkpoint_gc  
   
  # Virutal A/B 
  ENABLE_VIRTUAL_AB := true 
