@@ -12,7 +12,6 @@
   # MIUI & Custom ROMs 
   export OF_NO_MIUI_PATCH_WARNING=1 
   export OF_NO_TREBLE_COMPATIBILITY_CHECK=1 
-  export OF_DONT_PATCH_ENCRYPTED_DEVICE=1 
   
   # Removes the loop block errors after flashing ZIPs (Workaround) 
   export OF_LOOP_DEVICE_ERRORS_TO_LOG=1 
