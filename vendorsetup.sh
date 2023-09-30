@@ -38,7 +38,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export FOX_DELETE_AROMAFM=1
 	export OF_USE_GREEN_LED=0
 	export FOX_ENABLE_APP_MANAGER=1
-	export OF_TARGET_DEVICES="chopin,chopinin"
+	export OF_TARGET_DEVICES="ruby,rubypro"
 	
 	# OTA
 	export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
@@ -57,9 +57,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 
 # Version / Maintainer infos 
   export OF_MAINTAINER="Norikhsan90"
-  export FOX_VERSION= "R12.1_0"
+  export FOX_VERSION="R12.1_0"
   export FOX_BUILD_TYPE="Unoficial_Beta" 
-  export FOX_VARIANT=MIUI 
+  export FOX_VARIANT="MIUI"
   export OF_PATCH_AVB20=1
   export FOX_ADVANCED_SECURITY=1
   export OF_USE_TWRP_SAR_DETECT=1
