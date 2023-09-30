@@ -1,4 +1,4 @@
- # 
+c # 
  # Copyright (C) 2023 The Android Open Source Project 
  # 
  # SPDX-License-Identifier: Apache-2.0 
@@ -97,10 +97,13 @@
 
  BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
  BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs 
+
+ BOARD_USES_PRODUCTIMAGE := true 
+ BUILD_WITHOUT_VENDOR := true
   
  # Workaround for error copying vendor files to recovery ramdisk 
- BOARD_VENDORIMAGE_PARTITION_TYPE := ext4
- BOARD_PRODUCTIMAGE_PARTITION_TYPE := erofs
+ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+ BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
  TARGET_COPY_OUT_VENDOR  := vendor
  TARGET_COPY_OUT_PRODUCT := product
   
