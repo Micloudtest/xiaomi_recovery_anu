@@ -22,7 +22,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export LC_ALL="C"
         export OF_AB_DEVICE=1
 	export ALLOW_MISSING_DEPENDENCIES=true
-	export OF_QUICK_BACKUP_LIST="/boot;/data;"
 	export OF_USE_NEW_MAGISKBOOT=1
 	export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
 	export FOX_USE_TWRP_RECOVERY_IMAGE_BUILDER=1
@@ -44,9 +43,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_KEEP_DM_VERITY_FORCED_ENCRYPTION=1
 	export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=1
 	export OF_FIX_OTA_UPDATE_MANUAL_FLASH_ERROR=1
-
-        # Bootimage Partition path
-        export FOX_RECOVERY_BOOT_PARTITION="/dev/block/by-name/boot"
 
         # flashlight
         export OF_FLASHLIGHT_ENABLE=1
