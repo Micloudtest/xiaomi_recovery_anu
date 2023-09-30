@@ -4,13 +4,8 @@
  # SPDX-License-Identifier: Apache-2.0 
  # 
 
-LOCAL_PATH := device/xiaomi/ruby
-
  # Dynamic
     PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
- # A/B
-    ENABLE_VIRTUAL_AB := true
 
  # A/B
     AB_OTA_UPDATER := true
