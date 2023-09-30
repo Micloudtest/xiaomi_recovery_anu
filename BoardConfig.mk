@@ -99,13 +99,12 @@
  BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs 
   
  # Workaround for error copying vendor files to recovery ramdisk 
- BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
- BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+ BOARD_VENDORIMAGE_PARTITION_TYPE := ext4
+ BOARD_PRODUCTIMAGE_PARTITION_TYPE := erofs
  TARGET_COPY_OUT_VENDOR  := vendor
  TARGET_COPY_OUT_PRODUCT := product
   
  # Filesystems 
- TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file 
  TARGET_USERIMAGES_USE_EXT4    := true 
  TARGET_USERIMAGES_USE_F2FS    := true 
  TARGET_USES_MKE2FS            := true 
