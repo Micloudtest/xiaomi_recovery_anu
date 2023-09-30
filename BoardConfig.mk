@@ -103,6 +103,7 @@
  TARGET_COPY_OUT_VENDOR := vendor 
   
  # Filesystems 
+ TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file 
  TARGET_USERIMAGES_USE_EXT4    := true 
  TARGET_USERIMAGES_USE_F2FS    := true 
  TARGET_USES_MKE2FS            := true 
@@ -110,7 +111,7 @@
  # System Properties 
  TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop 
   
- # Despite being VA/B device, there is a dedicated recovery partition  
+ # Despite being VA/B device, there is a dedicated recovery partition 
  BOARD_HAS_LARGE_FILESYSTEM     := true 
  BOARD_HAS_NO_SELECT_BUTTON     := true 
  BOARD_SUPPRESS_SECURE_ERASE    := true 
@@ -120,7 +121,8 @@
  TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab 
 
  # TWRP - Specifics 
- TW_THEME                := portrait_hdpi 
+ TW_THEME                := portrait_hdpi
+ TW_BRIGHTNESS_PATH      := "/sys/class/leds/lcd-backlight/brightness"
  TW_DEFAULT_LANGUAGE     := en 
  TW_USE_TOOLBOX          := true 
  TW_INCLUDE_NTFS_3G      := true  
@@ -129,7 +131,7 @@
  TW_MAX_BRIGHTNESS       := 2047 
  TW_DEFAULT_BRIGHTNESS   := 200 
  TW_EXCLUDE_APEX         := true 
- TW_INCLUDE_FASTBOOTD    := true 
+ TW_INCLUDE_FASTBOOTD    := true
   
  # Set panel refresh rate to 90 Hertz for smoother experience 
  # Possible supported frequencies: 30, 60, 90, 120 
