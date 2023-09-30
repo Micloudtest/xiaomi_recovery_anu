@@ -100,7 +100,9 @@
   
  # Workaround for error copying vendor files to recovery ramdisk 
  BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
- TARGET_COPY_OUT_VENDOR := vendor 
+ BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+ TARGET_COPY_OUT_VENDOR  := vendor
+ TARGET_COPY_OUT_PRODUCT := product
   
  # Filesystems 
  TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file 
