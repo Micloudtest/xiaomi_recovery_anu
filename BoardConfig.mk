@@ -91,7 +91,6 @@ c #
  BOARD_XIAOMI_DYNAMIC_PARTITIONS_SIZE := 9122611200 
  BOARD_XIAOMI_DYNAMIC_PARTITIONS_PARTITION_LIST := \
          system \
-         system_ext \
          vendor \
          product
 
@@ -102,8 +101,8 @@ c #
  BUILD_WITHOUT_VENDOR := true
   
  # Workaround for error copying vendor files to recovery ramdisk 
- BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
- BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
+ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := erofs
+ BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := erofs
  TARGET_COPY_OUT_VENDOR  := vendor
  TARGET_COPY_OUT_PRODUCT := product
   
