@@ -131,7 +131,6 @@ TW_INCLUDE_FBE_METADATA_DECRYPT := true
 # TWRP Configuration
 TW_FRAMERATE := 90
 TW_THEME := portrait_hdpi
-TW_NO_HAPTICS := true
 TW_EXTRA_LANGUAGES := true
 TW_BACKUP_EXCLUSIONS := /data/fonts
 TW_INPUT_BLACKLIST := "hbtp_vm"
