@@ -54,6 +54,5 @@
 /storage		f2fs		/data/media/0			flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
 
 ## External Storage
-/usb-otg          	auto		/dev/block/sdd1                 flags=display="usb-otg";storage;wipeingui;removable;fsflags="utf8"
-
+/usb_otg            auto      /dev/block/sdd1               /dev/block/sdd                          flags=fsflags=utf8;display="USB-Storage";storage;wipeingui;
 
