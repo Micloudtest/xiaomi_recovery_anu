@@ -33,6 +33,12 @@ on post-fs
 on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
 
+service vibrator-service /system/bin/hw/vendor.qti.hardware.vibrator.impl.ruby.so
+    user root
+    group root
+    class hal
+    seclabel u:r:recovery:s0
+
 service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
     class main
     user root
@@ -79,3 +85,4 @@ on property:twrp.all.users.decrypted=true
 on boot
     start boot-hal-1-2
     start health-hal-2-1
+    start vibrator-service
