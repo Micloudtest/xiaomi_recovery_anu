@@ -90,6 +90,7 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
                 export FOX_USE_NANO_EDITOR=1
                 export FOX_USE_GREP_BINARY=1
                 export FOX_USE_TAR_BINARY=1
+		export FOX_USE_BRX_BINARY=1
                 export FOX_USE_ZIP_BINARY=1
                 export FOX_USE_SED_BINARY=1
                 export FOX_REPLACE_TOOLBOX_GETPROP=1
