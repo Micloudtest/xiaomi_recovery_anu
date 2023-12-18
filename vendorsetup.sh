@@ -40,8 +40,14 @@ fi
 if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 	echo -e "\x1b[96m[INFO]: Setting up OrangeFox build vars for ruby...\x1b[m"
 	if [ "$1" = "$FDEVICE" ] || [  "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
-		# Version / Maintainer infos
-         	export TW_DEFAULT_LANGUAGE="en"
+		
+                # Language
+		if [ -z "$TW_DEFAULT_LANGUAGE" ]; then
+                   unset TW_DEFAULT_LANGUAGE
+                   export TW_DEFAULT_LANGUAGE="en"
+                fi
+
+	        # Version / Maintainer infos
 		export OF_MAINTAINER="Tapin Recovery Instraller"
 		export FOX_VERSION=R12.1_0-1
 		export FOX_BUILD_TYPE="Unofficial"
