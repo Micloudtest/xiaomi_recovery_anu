@@ -52,6 +52,7 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
                 # Magiskboot
 	        export OF_USE_MAGISKBOOT=1
 	        export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
+                export OF_PATCH_VBMETA_FLAG=1
   
 		# OTA / DM-Verity / Encryption
                 export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=0
@@ -75,11 +76,20 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 		export OF_HIDE_NOTCH=1
 		export OF_CLOCK_POS=1 # left and right clock positions available
 		export OF_USE_GREEN_LED=0
-
-		export FOX_USE_TAR_BINARY=1
-                export FOX_USE_SED_BINARY=1
-                export FOX_USE_XZ_UTILS=1
                 export OF_FLASHLIGHT_ENABLE=0
+
+	        # Binaries
+                export FOX_USE_BASH_SHELL=1
+                export FOX_ASH_IS_BASH=1
+                export FOX_USE_NANO_EDITOR=1
+                export FOX_USE_GREP_BINARY=1
+                export FOX_USE_TAR_BINARY=1
+                export FOX_USE_ZIP_BINARY=1
+                export FOX_USE_SED_BINARY=1
+                export FOX_REPLACE_TOOLBOX_GETPROP=1
+                export FOX_USE_XZ_UTILS=1
+                export FOX_REPLACE_BUSYBOX_PS=1
+                export OF_ENABLE_LPTOOLS=1
 
 		# Security (Disables MTP & ADB during password prompt)
 		export OF_ADVANCED_SECURITY=1
