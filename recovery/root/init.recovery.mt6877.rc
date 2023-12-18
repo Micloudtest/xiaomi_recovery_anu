@@ -33,7 +33,7 @@ on post-fs
 on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
 
-service vibrator-service /system/bin/hw/vendor.qti.hardware.vibrator.impl.ruby.so
+service vibrator-service /system/bin/hw/android.hardware.vibrator-V1-ndk.so
     class hal
     disabled
     user root
