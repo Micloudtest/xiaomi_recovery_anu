@@ -34,9 +34,10 @@ on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
     install_keyring
 
 service vibrator-service /system/bin/hw/vendor.qti.hardware.vibrator.impl.ruby.so
+    class hal
+    disabled
     user root
     group root
-    class hal
     seclabel u:r:recovery:s0
 
 service mtk.plpath.utils.link /system/bin/mtk_plpath_utils
