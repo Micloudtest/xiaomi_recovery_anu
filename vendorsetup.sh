@@ -90,8 +90,8 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
                 export FOX_USE_NANO_EDITOR=1
                 export FOX_USE_GREP_BINARY=1
                 export FOX_USE_TAR_BINARY=1
-		export FOX_USE_BRX_BINARY=1
                 export FOX_USE_ZIP_BINARY=1
+		export FOX_USE_BRX_BINARY=1
                 export FOX_USE_SED_BINARY=1
                 export FOX_REPLACE_TOOLBOX_GETPROP=1
                 export FOX_USE_XZ_UTILS=1
@@ -102,7 +102,7 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
 		export OF_ADVANCED_SECURITY=1
 
                 #Debug
-                export FOX_INSTALLER_DEBUG_MODE=1
+                export FOX_INSTALLER_DEBUG_MODE=0
 
                 # Metadata encription
         	export OF_FBE_METADATA_MOUNT_IGNORE=1
