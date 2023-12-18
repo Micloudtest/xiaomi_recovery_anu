@@ -144,7 +144,6 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_NO_SCREEN_BLANK := true
 TW_SCREEN_BLANK_ON_BOOT := true
 BOARD_HAS_NO_SELECT_BUTTON := true
-TW_NO_HAPTICS := true
 TW_INCLUDE_FASTBOOTD := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
