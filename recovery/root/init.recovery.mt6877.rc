@@ -78,7 +78,7 @@ on property:ro.crypto.state=unencrypted
     stop gatekeeper-1-0
         
 on property:twrp.all.users.decrypted=true
-    stop teei_daemon-beanpod 
+    stop teei_daemon
     stop keymaster-4-1-beanpod 
     stop gatekeeper-1-0
    
