@@ -110,7 +110,6 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
                 export OF_IGNORE_LOGICAL_MOUNT_ERRORS=1
   
 		# Other OrangeFox configs
-		export OF_ENABLE_LPTOOLS=1
 		export OF_ALLOW_DISABLE_NAVBAR=0
 		export FOX_DELETE_AROMAFM=1
                 export OF_USE_SYSTEM_FINGERPRINT=1
