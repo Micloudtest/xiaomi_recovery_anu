@@ -58,7 +58,7 @@ if [ -f "$(gettop)/bootable/recovery/orangefox.cpp" ]; then
                 # Magiskboot
 	        export OF_USE_MAGISKBOOT=1
 	        export OF_USE_MAGISKBOOT_FOR_ALL_PATCHES=1
-                export OF_PATCH_VBMETA_FLAG=1
+                export FOX_PATCH_VBMETA_FLAG=1
   
 		# OTA / DM-Verity / Encryption
                 export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=0
