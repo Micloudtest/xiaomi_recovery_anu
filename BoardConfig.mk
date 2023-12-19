@@ -138,16 +138,18 @@ TW_DEVICE_VERSION :=RUBY_Tapin
 TW_FRAMERATE := 90
 TW_THEME := portrait_hdpi
 TW_INCLUDE_NTFS_3G := true 
-TW_EXTRA_LANGUAGES := true
 TW_BACKUP_EXCLUSIONS := /data/fonts
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_NO_SCREEN_BLANK := true
-TW_NO_HAPTICS  := true
 TW_SCREEN_BLANK_ON_BOOT := true
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_INCLUDE_FASTBOOTD := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.usb0/lun.%d/file
+
+TW_SUPPORT_INPUT_AIDL_HAPTICS := true 
+TW_SUPPORT_INPUT_AIDL_HAPTICS_FQNAME := "IVibrator/vibratorfeature" 
+TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
 
 # This device does not support fastboot boot, do *NOT* remove!
 TW_NO_FASTBOOT_BOOT := true
