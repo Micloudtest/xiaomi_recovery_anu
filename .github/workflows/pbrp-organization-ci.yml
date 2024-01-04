@@ -89,7 +89,7 @@ jobs:
     - name: Install Git-Repo
       run: |
         git config --global advice.detachedHead false
-        git clone https://android.googlesource.com/tools/repo -b v2.30 ~/bin
+        git clone https://android.googlesource.com/tools/repo -b v2.40 ~/bin
         chmod a+x ~/bin/repo
         sudo ln -sf ~/bin/repo /usr/bin/repo
 
