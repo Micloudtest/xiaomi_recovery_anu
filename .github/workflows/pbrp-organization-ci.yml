@@ -131,7 +131,7 @@ jobs:
     - name: Building Recovery
       run: |
         source build/envsetup.sh
-        export ALLOW_MISSING_DEPENDENCIES=true
+        ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true
         lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && make ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
       working-directory: ${{ steps.pwd.outputs.workdir }}
       
@@ -143,7 +143,7 @@ jobs:
     - name: Renaming into PBRP
       run: |
         cd out/target/product/${{ github.event.inputs.DEVICE_NAME }}
-        mv vendor_boot.img ${{ github.event.inputs.MANIFEST_BRANCH }}-3.7.0-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.img
+        mv boot.img ${{ github.event.inputs.MANIFEST_BRANCH }}-3.7.0-${{ github.event.inputs.DEVICE_NAME }}-${{ steps.props.outputs.date }}.img
       working-directory: ${{ steps.pwd.outputs.workdir }}
       
     - name: Upload to Release
