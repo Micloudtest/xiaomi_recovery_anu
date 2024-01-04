@@ -147,7 +147,7 @@ jobs:
         body: |
           Device: ${{ github.event.inputs.DEVICE_NAME }}
           Manifest: ${{ github.event.inputs.MANIFEST_URL }} -b ${{ github.event.inputs.MANIFEST_BRANCH }}
-          Status: Alpha - Test it Yourself.
+          Status: Beta - Test it Yourself.
 
     - name: Link of Release
       run: |
