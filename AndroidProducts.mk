@@ -5,7 +5,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_ruby.mk
+    $(LOCAL_DIR)/omni_ruby.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_ruby-eng
+    omni_ruby-eng
