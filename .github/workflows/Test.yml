@@ -1,0 +1,75 @@
+name: Building Pbrp recovery 
+  
+ on: 
+   workflow_dispatch: 
+  
+ env: 
+   MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-12.1 
+   DEVICE: ruby
+   DT_LINK: https://github.com/Micloudtest/xiaomi_recovery_anu.git 
+   DT_PATH: device/xiaomi/ruby
+   TARGET: bootimage
+   OT: twrp_ 
+  
+   TZ: Asia/Dhaka 
+  
+ jobs: 
+   build: 
+     runs-on: ubuntu-20.04 
+  
+  
+     steps: 
+        - name: Checkout 
+          uses: actions/checkout@master 
+  
+  
+        - name: remove pkg and setting repo 
+          run: | 
+             sudo apt update  
+             sudo apt install git -y 
+             git clone https://github.com/SA-17/rm_pkg pkg && cd pkg && bash setup.sh 
+             cd .. && sudo -E apt-get -qq update 
+             sudo rm -rf /opt/* 
+             sudo rm -rf /usr/share/dotnet 
+             sudo rm -rf "/usr/local/share/boost" 
+             sudo rm -rf "$AGENT_TOOLSDIRECTORY" 
+             sudo apt update 
+             sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo 
+             sudo chmod a+rx /usr/local/bin/repo 
+             sudo apt install zip -y 
+    
+        - name: Sync recovery source and device tree 
+          run: | 
+              mkdir work 
+              cd work 
+              sudo su 
+              repo init -u $MANIFEST --depth=1 
+              repo sync -c -j600 --force-sync --no-clone-bundle --no-tags 
+              git clone $DT_LINK --depth=1 --single-branch $DT_PATH 
+               
+               
+        - name: Build 
+          run: | 
+               cd work 
+               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka pbrp -j6 
+               zip pbrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/*UNOFFICIAL* 
+               ls 
+                                        
+        - name: Save 
+          uses: actions/upload-artifact@v2 
+          with: 
+             name: recovery.zip 
+             path: /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/ruby/*UNOFFICIAL* 
+             retention-days: 31 
+  
+        - name: Release recovery 
+          uses: softprops/action-gh-release@v1 
+          env: 
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+          with: 
+           tag_name: ${{ github.run_id }} 
+           name:  PBRP Recovery For ruby [Unofficial]  
+           files: | 
+            /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/ruby/*UNOFFICIAL* 
+            /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/ruby/*img* 
+            /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/ruby/*tar*
