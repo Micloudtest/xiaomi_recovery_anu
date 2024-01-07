@@ -1,75 +1,111 @@
-name: Building Pbrp recovery 
+# This is a basic workflow to help you get started with Actions 
   
+ name: Recovery Builder 
+  
+ # Controls when the workflow will run 
  on: 
+   # Allows you to run this workflow manually from the Actions tab 
    workflow_dispatch: 
+     inputs: 
+       DEVICE_TREE: 
+          description: 'Custom recovery Tree' 
+          required: true 
+          default: 'https://github.com/xeroxero8x/device_xiaomi_sweet_k6a-pbrp' 
   
- env: 
-   MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-12.1 
-   DEVICE: ruby
-   DT_LINK: https://github.com/Micloudtest/xiaomi_recovery_anu.git 
-   DT_PATH: device/xiaomi/ruby
-   TARGET: bootimage
-   OT: twrp_ 
-  
-   TZ: Asia/Dhaka 
+       DEVICE_TREE_BRANCH: 
+         description: 'Custom Recovery Tree Branch' 
+         required: true 
+         default: 'android-12.1' 
+       MANIFEST_BRANCH: 
+         description: 'Branch of PBRP Minimal Manifest' 
+         required: true 
+         default: 'recovery' 
+       DEVICE_PATH: 
+         description: 'Specify your device path.' 
+         required: true 
+         default: 'device/xiaomi/ruby' 
+       DEVICE_NAME: 
+         description: 'Specify your Device Codename.' 
+         required: true 
+         default: 'ruby' 
   
  jobs: 
    build: 
-     runs-on: ubuntu-20.04 
-  
-  
+     name: Build Recovery by ${{ github.actor }} 
+     runs-on: ubuntu-latest 
+     if: github.event.repository.owner.id == github.event.sender.id 
+     env: 
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+     permissions: 
+       contents: write 
      steps: 
-        - name: Checkout 
-          uses: actions/checkout@master 
+     - name: Checkout 
+       uses: actions/checkout@v3 
   
+     - name: Clean-up 
+       uses: rokibhasansagar/slimhub_actions@main 
   
-        - name: remove pkg and setting repo 
-          run: | 
-             sudo apt update  
-             sudo apt install git -y 
-             git clone https://github.com/SA-17/rm_pkg pkg && cd pkg && bash setup.sh 
-             cd .. && sudo -E apt-get -qq update 
-             sudo rm -rf /opt/* 
-             sudo rm -rf /usr/share/dotnet 
-             sudo rm -rf "/usr/local/share/boost" 
-             sudo rm -rf "$AGENT_TOOLSDIRECTORY" 
-             sudo apt update 
-             sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo 
-             sudo chmod a+rx /usr/local/bin/repo 
-             sudo apt install zip -y 
-    
-        - name: Sync recovery source and device tree 
-          run: | 
-              mkdir work 
-              cd work 
-              sudo su 
-              repo init -u $MANIFEST --depth=1 
-              repo sync -c -j600 --force-sync --no-clone-bundle --no-tags 
-              git clone $DT_LINK --depth=1 --single-branch $DT_PATH 
-               
-               
-        - name: Build 
-          run: | 
-               cd work 
-               . build/envsetup.sh && lunch $OT$DEVICE-eng && export ALLOW_MISSING_DEPENDENCIES=true && mka pbrp -j6 
-               zip pbrp.zip /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/$DEVICE/*UNOFFICIAL* 
-               ls 
-                                        
-        - name: Save 
-          uses: actions/upload-artifact@v2 
-          with: 
-             name: recovery.zip 
-             path: /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/ruby/*UNOFFICIAL* 
-             retention-days: 31 
+     - name: Swap Space 
+       uses: pierotofy/set-swap-space@master 
+       with: 
+         swap-size-gb: 12 
   
-        - name: Release recovery 
-          uses: softprops/action-gh-release@v1 
-          env: 
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-          with: 
-           tag_name: ${{ github.run_id }} 
-           name:  PBRP Recovery For ruby [Unofficial]  
-           files: | 
-            /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/ruby/*UNOFFICIAL* 
-            /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/ruby/*img* 
-            /home/runner/work/Recovery_builder/Recovery_builder/work/out/target/product/ruby/*tar*
+     - name: Build Environment 
+       run: | 
+         sudo apt update -y 
+         sudo apt upgrade -y 
+         sudo apt install repo -y 
+         git clone https://github.com/akhilnarang/scripts 
+         cd scripts 
+         sudo bash setup/android_build_env.sh 
+        
+     - name: Set-up Manifest 
+       run: | 
+         mkdir -p ${GITHUB_WORKSPACE}/Recovery 
+         cd ${GITHUB_WORKSPACE}/Recovery 
+         git config --global user.name "xeroxero8x" 
+         git config --global user.email "xeroxero8@outlook.com" 
+         repo init --depth=1 -u https://github.com/PitchBlackRecoveryProject/manifest_pb -b ${{ github.event.inputs.MANIFEST_BRANCH }} 
+         repo sync 
+     - name: Clone Device Tree 
+       run: | 
+         cd ${GITHUB_WORKSPACE}/Recovery 
+         git clone ${{ github.event.inputs.DEVICE_TREE }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }}  ${{ github.event.inputs.DEVICE_PATH }}      
+     - name: Building Recovery 
+       run: | 
+         cd ${GITHUB_WORKSPACE}/Recovery 
+         source build/envsetup.sh 
+         export LC_ALL=C 
+         export ALLOW_MISSING_DEPENDENCIES=true 
+         lunch twrp_${{ github.event.inputs.DEVICE_NAME }}-eng && mka recoveryimage 
+  
+     - name: Set Build Date # For Build Date Info, currently using Asia/Dhaka 
+       run: | 
+         echo "BUILD_DATE=$(TZ=Asia/Dhaka date +%Y%m%d)" >> $GITHUB_ENV 
+  
+     - name: Check if Recovery Exist 
+       run: | 
+         cd ${GITHUB_WORKSPACE}/Recovery 
+         if [ -f out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery*.img ]; then 
+             echo "CHECK_IMG_IS_OK=true" >> $GITHUB_ENV 
+         else 
+             echo "Recovery out directory is empty." 
+         fi 
+         if [ -f out/target/product/${{ github.event.inputs.DEVICE_NAME }}/PBRP*.zip ]; then 
+             echo "CHECK_ZIP_IS_OK=true" >> $GITHUB_ENV 
+         else 
+             echo "Recovery out directory is empty." 
+         fi 
+  
+     - name: Upload to Release 
+       if: env.CHECK_IMG_IS_OK == 'true' && env.CHECK_ZIP_IS_OK == 'true' 
+       uses: softprops/action-gh-release@v1 
+       with: 
+         files: | 
+           Recovery/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery*.img 
+           Recovey/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/PBRP*.zip 
+         name: Unofficial ${{ github.event.inputs.RECOVERY_NAME}} for ${{ github.event.inputs.DEVICE_NAME }} // ${{ env.BUILD_DATE }} 
+         tag_name: ${{ github.run_id }} 
+         body: | 
+           Build: ${{ github.event.inputs.MANIFEST_BRANCH }} 
+           Device: ${{ github.event.inputs.DEVICE_TREE }}/tree/${{ github.event.inputs.DEVICE_TREE_BRANCH }}
