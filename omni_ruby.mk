@@ -17,7 +17,7 @@ $(call inherit-product, vendor/pb/config/common.mk)
 
 ## Device identifier 
  PRODUCT_DEVICE := ruby 
- PRODUCT_NAME   := twr_ruby
+ PRODUCT_NAME   := omni_ruby
  PRODUCT_BRAND := Xiaomi 
  PRODUCT_MODEL := Redmi Note 12 Pro 5G
  PRODUCT_MANUFACTURER := Xiaomi
