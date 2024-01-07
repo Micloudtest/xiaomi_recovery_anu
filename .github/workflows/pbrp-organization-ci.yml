@@ -5,7 +5,7 @@ name: Building Pbrp recovery
   
  env: 
    MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-12.1 
-   DEVICE: sweet_k6a 
+   DEVICE: ruby
    DT_LINK: https://github.com/Micloudtest/xiaomi_recovery_anu.git 
    DT_PATH: device/xiaomi/ruby
    TARGET: boot
