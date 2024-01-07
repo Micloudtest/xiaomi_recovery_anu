@@ -8,7 +8,7 @@ name: Building Pbrp recovery
    DEVICE: ruby
    DT_LINK: https://github.com/Micloudtest/xiaomi_recovery_anu.git 
    DT_PATH: device/xiaomi/ruby
-   TARGET: boot
+   TARGET: bootimage
    OT: twrp_ 
   
    TZ: Asia/Dhaka 
