@@ -6,7 +6,7 @@ name: Building Pbrp recovery
  env: 
    MANIFEST: https://github.com/PitchBlackTWRP/manifest_pb.git -b android-12.1 
    DEVICE: ruby
-   DT_LINK: https://github.com/Micloudtest/xiaomi_recovery_anu
+   DT_LINK: https://github.com/Micloudtest/tw_anu_a13
    DT_PATH: device/xiaomi/ruby
    TARGET: bootimage
    OT: twrp_ 
