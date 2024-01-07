@@ -10,7 +10,7 @@
        DEVICE_TREE: 
           description: 'Custom recovery Tree' 
           required: true 
-          default: 'https://github.com/Micloudtest/xiaomi_recovery_anu' 
+          default: 'https://github.com/Micloudtest/tw_anu_a13' 
   
        DEVICE_TREE_BRANCH: 
          description: 'Custom Recovery Tree Branch' 
