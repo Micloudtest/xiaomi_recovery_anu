@@ -15,11 +15,11 @@
        DEVICE_TREE_BRANCH: 
          description: 'Custom Recovery Tree Branch' 
          required: true 
-         default: 'android-12.1' 
+         default: 'recovery' 
        MANIFEST_BRANCH: 
          description: 'Branch of PBRP Minimal Manifest' 
          required: true 
-         default: 'recovery' 
+         default: 'android-12.1' 
        DEVICE_PATH: 
          description: 'Specify your device path.' 
          required: true 
